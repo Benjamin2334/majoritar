@@ -1,0 +1,41 @@
+#include <iostream>
+
+using namespace std;
+int n, v[100001], cnt=0, maxi=-1, maxii, C;
+int main()
+{
+    cin>>n;
+    for(int i=1;i<=n;i++){
+        cin>>v[i];
+    }
+    C=v[1];
+    for(int i=1;i<=n;i++){
+
+            if(v[i]==C){
+                cnt++;
+                  }
+            else{
+                cnt--;
+            }
+            if(cnt==0){
+                C=v[i];
+                cnt=1;
+            }
+
+    }
+    cnt=0;
+    for(int i=1;i<=n;i++){
+     if(v[i]==C){
+        cnt++;
+     }
+    }
+    if(cnt>n/2){
+        cout<<"DA "<<C;
+    }
+    else{
+     cout<<"NU";
+    }
+
+
+    return 0;
+}
